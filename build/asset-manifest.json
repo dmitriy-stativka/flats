@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.67614f05.css",
+    "main.js": "/static/js/main.2cb53b24.js",
+    "static/media/image1.jpg": "/static/media/image1.a962baa38c946744d115.jpg",
+    "static/media/image2.jpg": "/static/media/image2.b952d27a60a42be853a9.jpg",
+    "static/media/image3.jpg": "/static/media/image3.b24e8b80e4c2e25001b2.jpg",
+    "static/media/walk.svg": "/static/media/walk.8b97748c57fe7ef0fb6e9a81ea291e20.svg",
+    "static/media/repair.svg": "/static/media/repair.2e72b099bdd05e407781f30dc6583b6e.svg",
+    "static/media/comfort.svg": "/static/media/comfort.148e6c517fcee7229e780d926094ddd2.svg",
+    "static/media/eoselya.svg": "/static/media/eoselya.0bebace06a6adf528387b8016c65741a.svg",
+    "static/media/auto.svg": "/static/media/auto.1bdf7a1593766bf0bd997396c19ec1b5.svg",
+    "static/media/ready.svg": "/static/media/ready.e21fa62655b303d265d4c9aa7bdce59a.svg",
+    "static/media/promotion.svg": "/static/media/promotion.e588973c3502217f906c559ffde5a6f3.svg",
+    "static/media/business.svg": "/static/media/business.b431433e4cd3264d21d843584552c2c1.svg",
+    "static/media/filtre.svg": "/static/media/filtre.a4e7bfac26a0797235beb75312008c4c.svg",
+    "static/media/metro.svg": "/static/media/metro.53a1eaf1b35a1a37c756549bb3409492.svg",
+    "index.html": "/index.html",
+    "static/media/district.svg": "/static/media/district.30d7093f243538017aba3ab6a406c9fb.svg",
+    "main.67614f05.css.map": "/static/css/main.67614f05.css.map",
+    "main.2cb53b24.js.map": "/static/js/main.2cb53b24.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.67614f05.css",
+    "static/js/main.2cb53b24.js"
+  ]
+}
