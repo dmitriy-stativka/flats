@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useStyles } from "./styles";
 import RoomsFilterPopup from "./RoomsFilterPopup";
 
-const RoomsFilter = ({ setIsPopupOpen }) => {
+const RoomsFilter = ({ setIsPopupOpen, closePopup }) => {
     const classes = useStyles();
     const [isPopupOpen, setIsLocalPopupOpen] = useState(false);
     const [selectedRooms, setSelectedRooms] = useState([]);
@@ -28,6 +28,7 @@ const RoomsFilter = ({ setIsPopupOpen }) => {
                 isPopupOpen={isPopupOpen}
                 setIsPopupOpen={setIsLocalPopupOpen}
                 selectedRooms={selectedRooms}
+                closePopup={closePopup}
                 setSelectedRooms={setSelectedRooms}
             />
         </div>

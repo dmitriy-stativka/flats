@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useStyles } from "./styles";
 import PriceFilterPopup from "./PriceFilterPopup";
 
-const PriceFilter = ({ setIsPopupOpen }) => {
+const PriceFilter = ({ setIsPopupOpen, closePopup }) => {
     const classes = useStyles();
     const [currency, setCurrency] = useState("грн");
     const [value, setValue] = useState([1090000, 2900980]);
@@ -57,6 +57,7 @@ const PriceFilter = ({ setIsPopupOpen }) => {
                 setValue={setValue}
                 isPopupOpen={isPopupOpen}
                 setIsPopupOpen={setIsLocalPopupOpen}
+                closePopup={closePopup}
             />
         </div>
     );

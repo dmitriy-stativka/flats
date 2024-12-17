@@ -12,7 +12,7 @@ export const useStyles = makeStyles({
     },
     resetButton: {
         fontSize: "16px",
-        fontWeight: "400",
+        fontWeight: "500",
         color: "#1E1E1E",
         cursor: "pointer",
         transition: "all 0.3s ease",
@@ -27,6 +27,8 @@ export const useStyles = makeStyles({
         background: "#ED1C24",
         color: "#fff",
         border: "none",
+        fontWeight: "500",
+
         cursor: "pointer",
         fontSize: "16px",
         transition: "all 0.3s ease",

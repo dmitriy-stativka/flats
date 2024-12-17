@@ -7,6 +7,7 @@ const RoomsFilterPopup = ({
     setIsPopupOpen,
     selectedRooms,
     setSelectedRooms,
+    closePopup,
 }) => {
     const classes = useStyles();
     const popupRef = useRef(null);
@@ -41,6 +42,7 @@ const RoomsFilterPopup = ({
 
     const handleApply = () => {
         setIsPopupOpen(false);
+        if (closePopup) closePopup();
     };
 
     return (

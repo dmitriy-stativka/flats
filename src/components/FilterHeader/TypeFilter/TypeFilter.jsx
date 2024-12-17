@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useStyles } from "./styles";
 import TypeFilterPopup from "./TypeFilterPopup";
 
-const TypeFilter = ({ setIsPopupOpen }) => {
+const TypeFilter = ({ setIsPopupOpen, closePopup }) => {
     const classes = useStyles();
     const [isPopupOpen, setIsLocalPopupOpen] = useState(false);
     const [activeButtons, setActiveButtons] = useState([]);
@@ -29,6 +29,7 @@ const TypeFilter = ({ setIsPopupOpen }) => {
                 setIsPopupOpen={setIsLocalPopupOpen}
                 activeButtons={activeButtons}
                 setActiveButtons={setActiveButtons}
+                closePopup={closePopup}
             />
         </div>
     );
