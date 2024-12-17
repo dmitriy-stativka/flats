@@ -26,7 +26,7 @@ const FilterResults = () => {
             way: "5 хв",
             priceFrom: "845 000 грн",
             priceTo: "1 535 000 грн",
-            image: image1,
+            images: [image1, image2, image3],
             details: "114 юнітів доступно",
 
             tags: [
@@ -50,7 +50,7 @@ const FilterResults = () => {
             priceFrom: "845 000 грн",
             priceTo: "1 535 000 грн",
             details: "314 юнітів доступно",
-            image: image2,
+            images: [image2, image1, image3],
 
             units: [
                 { type: "Студії", area: "35", price: "425 000 грн" },
@@ -68,7 +68,7 @@ const FilterResults = () => {
             way: "15 хв",
             priceFrom: "845 000 грн",
             priceTo: "1 535 000 грн",
-            image: image3,
+            images: [image3, image2, image1],
             details: "214 юнітів доступно",
             tags: [{ label: "Зі знижкою", icon: <Promotion /> }],
             units: [

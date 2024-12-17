@@ -1,9 +1,14 @@
 import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
+
 import useStyles from "./styles";
 
 const FilterCard = ({
     name,
-    image,
+    images = [],
     iconLocation,
     location,
     iconWay,
@@ -30,8 +35,37 @@ const FilterCard = ({
                 ))}
             </ul>
 
-            <div className={classes.imageWrapper}>
+            {/* <div className={classes.imageWrapper}>
                 <img src={image} alt={name} className={classes.image} />
+            </div> */}
+
+            <div className={classes.imageWrapper}>
+                {/* Desktop View */}
+                <div className={classes.desktopView}>
+                    <img src={images[0]} alt={name} className={classes.image} />
+                </div>
+
+                {/* Mobile Swiper */}
+
+                <div className={classes.mobileView}>
+                    <Swiper
+                        modules={[Pagination]}
+                        spaceBetween={10}
+                        slidesPerView={1}
+                        pagination={{ clickable: true }}
+                        className="custom-swiper"
+                    >
+                        {images.map((img, index) => (
+                            <SwiperSlide key={index}>
+                                <img
+                                    src={img}
+                                    alt={`${name}-${index}`}
+                                    className={classes.image}
+                                />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
             </div>
 
             <div className={classes.hoverCard}>
@@ -71,7 +105,7 @@ const FilterCard = ({
                 </ul>
 
                 <div className={classes.bottom}>
-                    <span>{details}</span>
+                    <span className={classes.units}>{details}</span>
                     <button className={classes.button}>Детальніше</button>
                 </div>
             </div>

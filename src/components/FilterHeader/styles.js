@@ -1,4 +1,5 @@
 import { makeStyles } from "@mui/styles";
+import vars from "../App/GlobalVars";
 
 export const useStyles = makeStyles({
     filterHeader: {
@@ -10,9 +11,13 @@ export const useStyles = makeStyles({
         transition: "background 0.5s",
         marginBottom: "20px",
 
+        [`@media (max-width: ${vars.breakpoints.md})`]: {
+            display: "none",
+        },
+
         "& > *": {
             flex: 1,
-            padding: "23px 30px",
+            padding: "20px 32px",
             margin: 0,
             display: "flex",
             flexDirection: "column",

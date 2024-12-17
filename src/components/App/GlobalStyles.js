@@ -3,6 +3,7 @@ import { makeStyles } from "@mui/styles";
 export const useGlobalStyles = makeStyles({
     "@global": {
         button: {
+            fontFamily: "inherit",
             background: "transparent",
             border: "none",
             padding: 0,

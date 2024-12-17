@@ -1,4 +1,5 @@
 import { makeStyles } from "@mui/styles";
+import GlobalVars from "../../App/GlobalVars";
 
 export const useStyles = makeStyles({
     filterItem: {
@@ -33,6 +34,7 @@ export const useStyles = makeStyles({
         border: "none",
         borderRadius: "50px",
         cursor: "pointer",
+        fontWeight: "500",
     },
     activeCurrency: {
         background: "#fff",
@@ -41,9 +43,9 @@ export const useStyles = makeStyles({
     },
     sliderContainer: {
         width: "calc(100% - 40px)",
-        padding: "5px 0",
         margin: "auto",
         display: "block",
+        marginTop: "5px",
     },
 
     input: {
@@ -55,6 +57,11 @@ export const useStyles = makeStyles({
         textAlign: "center",
         margin: "0 !important",
         transition: "border 0.3s, background 0.3s",
+
+        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+            padding: "13px 0 !important",
+            fontSize: "14px",
+        },
 
         "&:hover": {
             borderColor: "#1E1E1E73",
@@ -108,12 +115,18 @@ export const useStyles = makeStyles({
         fontSize: "14px",
         color: "#757575",
     },
+
     slider: {
         "& .MuiSlider-thumb": {
             backgroundColor: "#fff",
             width: "40px",
             height: "40px",
             border: "1px solid rgba(0,0,0, 0.15)",
+
+            [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+                width: "32px",
+                height: "32px",
+            },
 
             "&:hover, &.Mui-focusVisible": {
                 boxShadow: "0px 0px 0px 8px rgba(229, 57, 53, 0.16)",
@@ -135,44 +148,14 @@ export const useStyles = makeStyles({
         },
     },
 
-    resetButton: {
-        fontSize: "16px",
-        color: "#1E1E1E",
-        cursor: "pointer",
-        transition: "all 0.3s ease",
-        textDecoration: "underline",
-
-        "&:hover": {
-            color: "#1E1E1EB2",
-        },
-    },
-
     label: {
         color: "#1E1E1E99",
         marginTop: "20px",
-    },
-
-    actions: {
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-
-        marginTop: "20px",
-        paddingTop: "20px",
-        borderTop: "1px solid #ddd",
-    },
-
-    applyButton: {
-        padding: "17px 27px",
-        background: "#ED1C24",
-        color: "#fff",
-        border: "none",
-        cursor: "pointer",
         fontSize: "16px",
-        transition: "all 0.3s ease",
+        fontWeight: "400",
 
-        "&:hover": {
-            backgroundColor: "#c70000",
+        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+            fontSize: "14px",
         },
     },
 

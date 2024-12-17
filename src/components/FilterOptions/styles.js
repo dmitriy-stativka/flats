@@ -1,4 +1,5 @@
 import { makeStyles } from "@mui/styles";
+import GlobalVars from "../App/GlobalVars";
 
 export const useStyles = makeStyles({
     filterOptionsContainer: {
@@ -8,8 +9,15 @@ export const useStyles = makeStyles({
         justifyContent: "flex-end",
         gap: "15px",
 
+        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+            gap: "20px",
+        },
         "& .swiper": {
             margin: "0 auto 0 0",
+
+            [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+                display: "none",
+            },
         },
     },
     filterOptions: {
@@ -78,6 +86,19 @@ export const useStyles = makeStyles({
         },
     },
 
+    allFiltersTabs: {
+        display: "none",
+
+        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+            display: "block",
+            width: "calc(100% - 80px)",
+
+            "& .headerNav": {
+                display: "block",
+            },
+        },
+    },
+
     filterOption: {
         padding: "14px 20px",
         border: "1px solid #1E1E1E1A",
@@ -130,11 +151,17 @@ export const useStyles = makeStyles({
     },
 
     icon: {
-        width: "22px",
-        height: "22px",
+        width: "20px",
+        height: "20px",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+
+        "& svg": {
+            width: "100%",
+            height: "100%",
+            color: "#787878",
+        },
     },
 
     allFilters: {
@@ -165,9 +192,86 @@ export const useStyles = makeStyles({
         gap: "6px",
         cursor: "pointer",
         transition: "all 0.3s ease",
+        position: "relative",
+
+        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+            fontSize: "14px",
+        },
+
+        "& svg": {
+            transform: "translateY(3px)",
+            width: "20px",
+            height: "20px",
+        },
 
         "&:hover": {
             backgroundColor: "#1E1E1E0D",
+        },
+
+        "&.hide": {
+            fontSize: "0",
+            gap: "0",
+            padding: "15px 19px",
+            transition: "all 0.3s ease",
+
+            "& svg": {
+                transform: "translateY(0)",
+            },
+        },
+    },
+
+    allFiltersButtonMobile: {
+        display: "none",
+
+        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+            display: "block",
+            fontWeight: "500",
+        },
+    },
+
+    allFiltersButtonDesktop: {
+        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+            display: "none",
+        },
+    },
+
+    allFiltersButtonTitle: {
+        display: "none",
+
+        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+            display: "block",
+            width: "100%",
+            fontSize: "20px",
+            fontWeight: "500",
+        },
+    },
+
+    popupContentInner: {
+        overflowY: "auto",
+        height: "100%",
+        paddingRight: "30px",
+        marginRight: "5px",
+
+        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+            overflowY: "initial",
+            paddingRight: "0",
+            marginRight: "0",
+        },
+
+        "&::-webkit-scrollbar": {
+            width: "14px",
+        },
+        "&::-webkit-scrollbar-track": {
+            background: "#fff",
+            border: "1px solid rgba(30,30,30,0.2)",
+            borderRadius: "50px",
+            boxSizing: "border-box",
+        },
+        "&::-webkit-scrollbar-thumb": {
+            background: "rgba(30,30,30,0.3)",
+            border: "4px solid transparent",
+            backgroundClip: "padding-box",
+            borderRadius: "50px",
         },
     },
     popupOverlay: {
@@ -178,20 +282,101 @@ export const useStyles = makeStyles({
         height: "100vh",
         background: "rgba(0, 0, 0, 0.5)",
         display: "flex",
-        alignItems: "center",
+        alignItems: "flex-start",
         justifyContent: "center",
         zIndex: 1000,
+        paddingTop: "40px",
+
+        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+            paddingTop: "20px",
+        },
     },
+
+    collapsibleTitle: {
+        fontSize: "22px",
+        color: "#1E1E1E",
+        fontWeight: "500",
+        margin: "0",
+
+        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+            fontSize: "18px",
+        },
+    },
+
+    collapsible: {
+        paddingBottom: "32px",
+        marginBottom: "32px",
+        borderBottom: "1px solid #1E1E1E1A",
+
+        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+            paddingBottom: "20px",
+            marginTop: "20px",
+            marginBottom: "0px",
+        },
+    },
+
+    collapsibleContent: {
+        marginTop: "20px",
+    },
+
+    collapsibleHeader: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        position: "relative",
+
+        "&:after": {
+            content: '""',
+            height: "32px",
+            width: "32px",
+            background:
+                "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='9' fill='none'%3E%3Cpath stroke='%231E1E1E' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 8 9 1 1 8'/%3E%3C/svg%3E\")",
+            display: "block",
+            backgroundSize: "50%",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center center",
+        },
+    },
+
+    popupContentTitle: {
+        fontSize: "22px",
+        lineHeight: "32px",
+        fontWeight: "500",
+        margin: "0 40px 32px 0",
+        paddingBottom: "32px",
+        borderBottom: "1px solid #1E1E1E1A",
+
+        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+            fontSize: "18px",
+            paddingBottom: "20px",
+            margin: "0 0px 20px 0",
+        },
+    },
+
     popupContent: {
         background: "#fff",
-        padding: "20px",
-        borderRadius: "10px",
-        width: "90%",
-        maxWidth: "600px",
+        padding: "30px 0px 30px 40px",
+        width: "100%",
+        height: "100%",
+        maxWidth: "816px",
         position: "relative",
         textAlign: "center",
         boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+
+        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+            padding: "20px",
+            overflowY: "auto",
+        },
     },
+
+    customPopup: {
+        position: "static",
+        width: "100%",
+        boxShadow: "none",
+        padding: "0",
+        border: "none",
+    },
+
     closePopupButton: {
         marginTop: "20px",
         padding: "10px 20px",

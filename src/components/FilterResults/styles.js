@@ -1,4 +1,5 @@
 import { makeStyles } from "@mui/styles";
+import GlobalVars from "../App/GlobalVars";
 
 export const useStyles = makeStyles({
     card: {
@@ -121,8 +122,12 @@ export const useStyles = makeStyles({
     results: {
         display: "grid",
         gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-        gap: "20px",
-        marginTop: "20px",
+        gap: "32px",
+        marginTop: "32px",
+
+        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+            marginTop: "20px",
+        },
     },
 });
 

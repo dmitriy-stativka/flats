@@ -1,4 +1,5 @@
 import { makeStyles } from "@mui/styles";
+import GlobalVars from "../../App/GlobalVars";
 
 export const useStyles = makeStyles({
     container: {
@@ -38,17 +39,27 @@ export const useStyles = makeStyles({
         marginBottom: "20px",
         borderRadius: "50px",
         padding: "4px",
+
+        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+            marginBottom: "0px",
+        },
     },
     tab: {
         flex: 1,
         textAlign: "center",
-        padding: "15px 0",
+        padding: "16px 0",
         cursor: "pointer",
         fontSize: "16px",
+        fontWeight: "500",
         color: "#1E1E1E",
         borderRadius: "50px",
         border: "1px solid transparent",
         transition: "background 0.3s",
+
+        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+            fontSize: "14px",
+            padding: "12px 0",
+        },
 
         "&:hover": {
             background: "#1E1E1E0D",
@@ -72,14 +83,19 @@ export const useStyles = makeStyles({
         gap: "8px",
     },
     button: {
-        padding: "17px 24px",
+        padding: "15.3px 19px",
         borderRadius: "50px",
         border: "1px solid #1E1E1E1A",
         color: "#1E1E1EB2",
         background: "#fff",
         cursor: "pointer",
-        fontSize: "14px",
+        fontSize: "16px",
         transition: "all 0.3s",
+
+        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+            fontSize: "14px",
+            padding: "12.5px 15px",
+        },
 
         "&:hover": {
             background: "#fff",
@@ -97,37 +113,7 @@ export const useStyles = makeStyles({
             },
         },
     },
-    actions: {
-        display: "flex",
-        justifyContent: "space-between",
-        marginTop: "20px",
-        paddingTop: "20px",
-        borderTop: "1px solid #1E1E1E1A",
-    },
-    resetButton: {
-        fontSize: "16px",
-        color: "#1E1E1E",
-        cursor: "pointer",
-        transition: "all 0.3s ease",
-        textDecoration: "underline",
 
-        "&:hover": {
-            color: "#1E1E1EB2",
-        },
-    },
-    applyButton: {
-        padding: "17px 27px",
-        background: "#ED1C24",
-        color: "#fff",
-        border: "none",
-        cursor: "pointer",
-        fontSize: "16px",
-        transition: "all 0.3s ease",
-
-        "&:hover": {
-            backgroundColor: "#FF0711",
-        },
-    },
     checkboxGroup: {
         marginBottom: "16px",
     },
@@ -139,7 +125,7 @@ export const useStyles = makeStyles({
         listStyle: "none",
         padding: 0,
         display: "flex",
-        alignItemsc: "center",
+        alignItems: "center",
         flexWrap: "wrap",
         gap: "8px",
         marginTop: "12px",
@@ -176,6 +162,8 @@ export const useStyles = makeStyles({
 
         "& + label": {
             cursor: "pointer",
+            fontWeight: "400",
+            fontSize: "16px",
         },
     },
 
