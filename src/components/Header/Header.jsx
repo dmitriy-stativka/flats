@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logo from "../../img/logo.jpg";
 import { useStyles } from "./styles";
 import clsx from "clsx";
+import NavigationTabs from "../NavigationTabs/NavigationTabs";
 
 const Header = () => {
     const [activeTab, setActiveTab] = useState(0);
@@ -23,26 +24,11 @@ const Header = () => {
                 <img src={logo} alt="Logo" />
             </div>
 
-            <div className={classes.headerNav}>
-                <nav className={classes.navigation}>
-                    <button
-                        className={clsx(classes.tab, {
-                            [classes.active]: activeTab === 0,
-                        })}
-                        onClick={() => handleTabClick(0)}
-                    >
-                        24 проєкти
-                    </button>
-                    <button
-                        className={clsx(classes.tab, {
-                            [classes.active]: activeTab === 1,
-                        })}
-                        onClick={() => handleTabClick(1)}
-                    >
-                        322 юніти
-                    </button>
-                </nav>
-            </div>
+            <NavigationTabs
+                activeTab={activeTab}
+                onTabClick={handleTabClick}
+                classes={classes}
+            />
 
             <div className={classes.headerBtn}>
                 <button

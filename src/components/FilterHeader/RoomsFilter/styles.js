@@ -68,6 +68,8 @@ export const useStyles = makeStyles({
 
         "& + label": {
             cursor: "pointer",
+            fontWeight: "400",
+            fontSize: "16px",
         },
     },
 
@@ -75,37 +77,6 @@ export const useStyles = makeStyles({
         display: "flex",
         alignItems: "center",
         gap: "8px",
-    },
-    actions: {
-        display: "flex",
-        justifyContent: "space-between",
-        marginTop: "20px",
-        paddingTop: "20px",
-        borderTop: "1px solid #1E1E1E1A",
-    },
-    resetButton: {
-        fontSize: "16px",
-        color: "#1E1E1E",
-        cursor: "pointer",
-        transition: "all 0.3s ease",
-        textDecoration: "underline",
-
-        "&:hover": {
-            color: "#1E1E1EB2",
-        },
-    },
-    applyButton: {
-        padding: "17px 27px",
-        background: "#ED1C24",
-        color: "#fff",
-        border: "none",
-        cursor: "pointer",
-        fontSize: "16px",
-        transition: "all 0.3s ease",
-
-        "&:hover": {
-            backgroundColor: "#c70000",
-        },
     },
 });
 

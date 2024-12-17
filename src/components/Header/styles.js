@@ -6,7 +6,11 @@ export const useStyles = makeStyles({
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        marginBottom: "20px",
+        marginBottom: "32px",
+
+        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+            marginBottom: "20px",
+        },
     },
     logo: {
         display: "flex",
@@ -18,18 +22,15 @@ export const useStyles = makeStyles({
             objectFit: "cover",
             transition: "opacity 0.3s",
 
+            [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+                height: "40px",
+            },
+
             "&:hover": {
                 opacity: 0.8,
                 transition: "opacity 0.3s",
             },
         },
-    },
-
-    headerNav: {
-        display: "flex",
-        alignItems: "center",
-        flexBasis: "33.3%",
-        justifyContent: "center",
     },
 
     headerBtn: {
@@ -44,14 +45,19 @@ export const useStyles = makeStyles({
         background: "rgba(30, 30, 30, 0.05)",
         borderRadius: "100px",
         padding: "4px",
+
+        maxWidth: "392px",
+        height: "56px",
+        width: "100%",
     },
     tab: {
         fontSize: "22px",
         border: "1px solid transparent",
         borderRadius: "100px",
-        padding: "15px 45px",
+        width: "50%",
         cursor: "pointer",
         transition: "border 0.5s ease, background 0.5s ease",
+        fontWeight: "500",
 
         "&:hover": {
             background: "rgba(30, 30, 30, 0.05)",
@@ -78,6 +84,11 @@ export const useStyles = makeStyles({
         border: "1px solid rgba(30, 30, 30, 0.1)",
         transition: "border 0.3s",
 
+        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+            width: "40px",
+            height: "40px",
+        },
+
         "&:hover": {
             border: "1px solid rgba(30, 30, 30, 0.45)",
         },
@@ -86,20 +97,28 @@ export const useStyles = makeStyles({
         width: "26px",
         height: "2px",
         display: "block",
-        margin: "4px 0",
+        margin: "3px 0",
         background: GlobalVars.colors.primaryColor1,
         opacity: 1,
         visibility: "visible",
         transition: "opacity 0.3s, visibility 0.3s, transform 0.3s",
 
+        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+            width: "20px",
+        },
+
         "&:nth-child(2)": {
             width: "20px",
+
+            [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+                width: "16px",
+            },
         },
     },
     activeMenu: {
         borderColor: GlobalVars.colors.primaryColor1,
         "& span:nth-child(1)": {
-            transform: "translate(0px, 10px) rotate(45deg)",
+            transform: "translate(0px, 8px) rotate(45deg)",
             transition: "transform 0.3s 0.1s",
         },
 
@@ -109,7 +128,7 @@ export const useStyles = makeStyles({
         },
 
         "& span:nth-child(3)": {
-            transform: "translate(0px, -10px) rotate(-45deg)",
+            transform: "translate(0px, -8px) rotate(-45deg)",
             transition: "transform 0.3s 0.1s",
         },
     },

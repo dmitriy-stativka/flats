@@ -1,22 +1,17 @@
 import { makeStyles } from "@mui/styles";
 import GlobalVars from "./GlobalVars";
 
+import "../../../src/index.css";
+
 export const useBaseStyles = makeStyles({
     wrapper: {
-        padding: "50px 70px",
+        padding: "32px",
         maxWidth: GlobalVars.breakpoints.xl,
         margin: "auto",
-        fontFamily: "Inter, sans-serif",
 
-        // [`@media (max-width: ${theme.breakpoints.xl})`]: {
-        //     background: "red",
-        // },
-
-        // hover
-
-        // "&:hover": {
-        //     background: "rgba(30, 30, 30, 0.05)",
-        // },
+        [`@media (max-width: ${GlobalVars.breakpoints.xl})`]: {
+            padding: "20px",
+        },
     },
 });
 

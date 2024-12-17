@@ -2,9 +2,10 @@
 
 body {
     margin: 0;
-    font-family: "Inter", sans-serif;
+    font-family: "Inter", sans-serif !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: #1e1e1e;
 }
 
 code {
