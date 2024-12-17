@@ -10,6 +10,7 @@ export const PriceFilterPopup = ({
     setIsPopupOpen,
     showActions = true,
     customClass,
+    closePopup,
 }) => {
     const classes = useStyles();
     const popupRef = useRef(null);
@@ -85,7 +86,10 @@ export const PriceFilterPopup = ({
             {showActions && (
                 <FilterActions
                     onReset={() => setValue([1000000, 3000000])}
-                    onApply={() => setIsPopupOpen(false)}
+                    onApply={() => {
+                        setIsPopupOpen(false);
+                        if (closePopup) closePopup();
+                    }}
                 />
             )}
         </div>

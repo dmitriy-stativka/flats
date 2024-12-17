@@ -13,6 +13,7 @@ export const LocationFilterPopup = ({
     setActiveStations,
     showActions = true,
     customClass,
+    closePopup,
 }) => {
     const classes = useStyles();
     const popupRef = useRef(null);
@@ -43,6 +44,7 @@ export const LocationFilterPopup = ({
 
     const handleApply = () => {
         setIsPopupOpen(false);
+        if (closePopup) closePopup();
     };
 
     return (

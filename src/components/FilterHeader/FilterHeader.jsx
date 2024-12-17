@@ -9,13 +9,29 @@ const FilterHeader = () => {
     const classes = useStyles();
     const [isPopupOpen, setIsPopupOpen] = useState(false);
 
+    const closePopup = () => {
+        setIsPopupOpen(false);
+    };
+
     return (
         <div className={`${classes.filterHeader} ${isPopupOpen ? "show" : ""}`}>
             <>
-                <LocationFilter setIsPopupOpen={setIsPopupOpen} />
-                <TypeFilter setIsPopupOpen={setIsPopupOpen} />
-                <PriceFilter setIsPopupOpen={setIsPopupOpen} />
-                <RoomsFilter setIsPopupOpen={setIsPopupOpen} />
+                <LocationFilter
+                    setIsPopupOpen={setIsPopupOpen}
+                    closePopup={closePopup}
+                />
+                <TypeFilter
+                    setIsPopupOpen={setIsPopupOpen}
+                    closePopup={closePopup}
+                />
+                <PriceFilter
+                    setIsPopupOpen={setIsPopupOpen}
+                    closePopup={closePopup}
+                />
+                <RoomsFilter
+                    setIsPopupOpen={setIsPopupOpen}
+                    closePopup={closePopup}
+                />
             </>
         </div>
     );

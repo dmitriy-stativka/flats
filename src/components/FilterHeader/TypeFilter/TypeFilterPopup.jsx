@@ -7,6 +7,7 @@ const TypeFilterPopup = ({
     setIsPopupOpen,
     activeButtons,
     setActiveButtons,
+    closePopup,
 }) => {
     const classes = useStyles();
     const popupRef = useRef(null);
@@ -41,6 +42,7 @@ const TypeFilterPopup = ({
 
     const handleApply = () => {
         setIsPopupOpen(false);
+        if (closePopup) closePopup();
     };
 
     return (

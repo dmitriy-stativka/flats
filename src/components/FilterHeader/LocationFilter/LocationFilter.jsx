@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import LocationFilterPopup from "./LocationFilterPopup";
 import useStyles from "./styles";
 
-const LocationFilter = ({ setIsPopupOpen }) => {
+const LocationFilter = ({ setIsPopupOpen, closePopup }) => {
     const classes = useStyles();
     const [isPopupOpen, setIsLocalPopupOpen] = useState(false);
     const [activeTab, setActiveTab] = useState("city");
@@ -29,6 +29,7 @@ const LocationFilter = ({ setIsPopupOpen }) => {
             <LocationFilterPopup
                 isPopupOpen={isPopupOpen}
                 setIsPopupOpen={setIsLocalPopupOpen}
+                closePopup={closePopup}
                 activeTab={activeTab}
                 setActiveTab={setActiveTab}
                 activeButtons={activeButtons}
