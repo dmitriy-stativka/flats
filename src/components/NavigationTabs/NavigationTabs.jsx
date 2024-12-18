@@ -7,7 +7,7 @@ const NavigationTabs = ({ activeTab, onTabClick }) => {
     const classes = useStyles();
 
     return (
-        <div className={classes.headerNav}>
+        <div className={[classes.headerNav, "headerNavTop"].join(" ")}>
             <nav className={classes.navigation}>
                 <button
                     className={clsx(classes.tab, {

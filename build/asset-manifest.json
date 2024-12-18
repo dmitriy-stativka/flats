@@ -1,27 +1,34 @@
 {
   "files": {
-    "main.css": "/static/css/main.00922dcc.css",
-    "main.js": "/static/js/main.99182d0a.js",
+    "main.css": "/static/css/main.451f1037.css",
+    "main.js": "/static/js/main.a32bfe8d.js",
     "static/media/image1.jpg": "/static/media/image1.a962baa38c946744d115.jpg",
     "static/media/image2.jpg": "/static/media/image2.b952d27a60a42be853a9.jpg",
     "static/media/image3.jpg": "/static/media/image3.b24e8b80e4c2e25001b2.jpg",
+    "static/media/comfortPlus.svg": "/static/media/comfortPlus.8c3b5968cef27f9884fd914af6c14723.svg",
+    "static/media/clubhouse.svg": "/static/media/clubhouse.d3ad661c9ac146e0afc840a37da2a02d.svg",
     "static/media/walk.svg": "/static/media/walk.8b97748c57fe7ef0fb6e9a81ea291e20.svg",
-    "static/media/repair.svg": "/static/media/repair.2e72b099bdd05e407781f30dc6583b6e.svg",
-    "static/media/comfort.svg": "/static/media/comfort.148e6c517fcee7229e780d926094ddd2.svg",
-    "static/media/eoselya.svg": "/static/media/eoselya.0bebace06a6adf528387b8016c65741a.svg",
+    "static/media/payment.svg": "/static/media/payment.f47ab88cb8bbf57c2c30fe7f14f25d33.svg",
+    "static/media/repair.svg": "/static/media/repair.a0eadbfc92c9ae7cc734445143d6cb17.svg",
+    "static/media/premium.svg": "/static/media/premium.4e9c7db0bd421db496c4cfbdc3919846.svg",
+    "static/media/credit.svg": "/static/media/credit.7b26b683221519451ef4ac040572a234.svg",
+    "static/media/comfort.svg": "/static/media/comfort.2d3388f30361484dca557c6bd62d6748.svg",
+    "static/media/sale.svg": "/static/media/sale.13ba71cd9d338eba5679724f80289325.svg",
+    "static/media/eoselya.svg": "/static/media/eoselya.4a08c66b6c35828ba53a47d9a38ca7fa.svg",
     "static/media/auto.svg": "/static/media/auto.1bdf7a1593766bf0bd997396c19ec1b5.svg",
-    "static/media/ready.svg": "/static/media/ready.e21fa62655b303d265d4c9aa7bdce59a.svg",
-    "static/media/promotion.svg": "/static/media/promotion.e588973c3502217f906c559ffde5a6f3.svg",
-    "static/media/business.svg": "/static/media/business.b431433e4cd3264d21d843584552c2c1.svg",
+    "static/media/ready.svg": "/static/media/ready.857e79edeeeed31d853ab648994dcef4.svg",
+    "static/media/promotion.svg": "/static/media/promotion.285229271349e6829420124937cb8390.svg",
+    "static/media/business.svg": "/static/media/business.c00ef59efd82df79818f1ac98635533f.svg",
+    "static/media/installment.svg": "/static/media/installment.ebec94d3c1bd52ae9986ac4becd85b5e.svg",
     "static/media/filtre.svg": "/static/media/filtre.a4e7bfac26a0797235beb75312008c4c.svg",
     "static/media/metro.svg": "/static/media/metro.53a1eaf1b35a1a37c756549bb3409492.svg",
     "index.html": "/index.html",
     "static/media/district.svg": "/static/media/district.30d7093f243538017aba3ab6a406c9fb.svg",
-    "main.00922dcc.css.map": "/static/css/main.00922dcc.css.map",
-    "main.99182d0a.js.map": "/static/js/main.99182d0a.js.map"
+    "main.451f1037.css.map": "/static/css/main.451f1037.css.map",
+    "main.a32bfe8d.js.map": "/static/js/main.a32bfe8d.js.map"
   },
   "entrypoints": [
-    "static/css/main.00922dcc.css",
-    "static/js/main.99182d0a.js"
+    "static/css/main.451f1037.css",
+    "static/js/main.a32bfe8d.js"
   ]
 }

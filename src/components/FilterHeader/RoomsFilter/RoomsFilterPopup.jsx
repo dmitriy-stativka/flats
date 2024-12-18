@@ -8,6 +8,9 @@ const RoomsFilterPopup = ({
     selectedRooms,
     setSelectedRooms,
     closePopup,
+    customClass,
+    showActions = true,
+    renderType = "checkbox", // Новый пропс: "checkbox" или "button"
 }) => {
     const classes = useStyles();
     const popupRef = useRef(null);
@@ -48,11 +51,17 @@ const RoomsFilterPopup = ({
     return (
         isPopupOpen && (
             <div
-                className={classes.popup}
+                className={`${classes.popup} ${customClass || ""}`}
                 ref={popupRef}
                 onClick={(e) => e.stopPropagation()}
             >
-                <div className={classes.content}>
+                <div
+                    className={`${classes.content} ${
+                        renderType === "button"
+                            ? classes.contentWithButtons
+                            : ""
+                    }`}
+                >
                     {[
                         "Студія",
                         "1-кімнатна",
@@ -62,19 +71,42 @@ const RoomsFilterPopup = ({
                         "5-кімнатна",
                     ].map((room) => (
                         <div key={room} className={classes.checkboxItem}>
-                            <input
-                                type="checkbox"
-                                id={room}
-                                className={classes.checkbox}
-                                checked={selectedRooms.includes(room)}
-                                onChange={() => toggleRoomSelection(room)}
-                            />
-                            <label htmlFor={room}>{room}</label>
+                            {renderType === "checkbox" ? (
+                                <>
+                                    <input
+                                        type="checkbox"
+                                        id={room}
+                                        className="lCheckbox"
+                                        checked={selectedRooms.includes(room)}
+                                        onChange={() =>
+                                            toggleRoomSelection(room)
+                                        }
+                                    />
+                                    <label htmlFor={room}>{room}</label>
+                                </>
+                            ) : (
+                                <button
+                                    type="button"
+                                    className={`lBtn ${
+                                        selectedRooms.includes(room)
+                                            ? classes.activeButton
+                                            : ""
+                                    }`}
+                                    onClick={() => toggleRoomSelection(room)}
+                                >
+                                    {room}
+                                </button>
+                            )}
                         </div>
                     ))}
                 </div>
 
-                <FilterActions onReset={handleReset} onApply={handleApply} />
+                {showActions && (
+                    <FilterActions
+                        onReset={handleReset}
+                        onApply={handleApply}
+                    />
+                )}
             </div>
         )
     );

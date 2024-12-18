@@ -8,6 +8,8 @@ const TypeFilterPopup = ({
     activeButtons,
     setActiveButtons,
     closePopup,
+    customClass,
+    showActions = true,
 }) => {
     const classes = useStyles();
     const popupRef = useRef(null);
@@ -48,11 +50,11 @@ const TypeFilterPopup = ({
     return (
         isPopupOpen && (
             <div
-                className={classes.popup}
+                className={`${classes.popup} ${customClass || ""}`}
                 ref={popupRef}
                 onClick={(e) => e.stopPropagation()}
             >
-                <div className={classes.content}>
+                <div className={"lContent"}>
                     {[
                         "Квартири",
                         "Апартаменти",
@@ -61,7 +63,7 @@ const TypeFilterPopup = ({
                     ].map((type) => (
                         <button
                             key={type}
-                            className={`${classes.button} ${
+                            className={`lBtn ${
                                 activeButtons.includes(type) ? "active" : ""
                             }`}
                             onClick={(e) => {
@@ -74,7 +76,12 @@ const TypeFilterPopup = ({
                     ))}
                 </div>
 
-                <FilterActions onReset={handleReset} onApply={handleApply} />
+                {showActions && (
+                    <FilterActions
+                        onReset={handleReset}
+                        onApply={handleApply}
+                    />
+                )}
             </div>
         )
     );

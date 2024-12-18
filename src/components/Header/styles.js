@@ -58,6 +58,7 @@ export const useStyles = makeStyles({
         cursor: "pointer",
         transition: "border 0.5s ease, background 0.5s ease",
         fontWeight: "500",
+        color: GlobalVars.colors.primaryColor1,
 
         "&:hover": {
             background: "rgba(30, 30, 30, 0.05)",

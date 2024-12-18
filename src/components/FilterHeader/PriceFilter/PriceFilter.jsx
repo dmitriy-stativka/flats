@@ -58,6 +58,10 @@ const PriceFilter = ({ setIsPopupOpen, closePopup }) => {
                 isPopupOpen={isPopupOpen}
                 setIsPopupOpen={setIsLocalPopupOpen}
                 closePopup={closePopup}
+                min={1090000}
+                max={2900980}
+                labelFrom="від"
+                labelTo="до"
             />
         </div>
     );

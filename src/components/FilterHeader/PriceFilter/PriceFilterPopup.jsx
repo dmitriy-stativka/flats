@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useStyles } from "./styles";
 import Slider from "@mui/material/Slider";
 import FilterActions from "../FilterActions/FilterActions";
@@ -11,12 +11,23 @@ export const PriceFilterPopup = ({
     showActions = true,
     customClass,
     closePopup,
+    min,
+    max,
+    labelFrom = "від",
+    labelTo = "до",
+    currencyEnabled = false,
+    currencyOptions = ["грн", "$"],
 }) => {
     const classes = useStyles();
     const popupRef = useRef(null);
+    const [currency, setCurrency] = useState(currencyOptions[0]);
 
     const handleSliderChange = (event, newValue) => {
         setValue(newValue);
+    };
+
+    const handleCurrencyChange = (newCurrency) => {
+        setCurrency(newCurrency);
     };
 
     if (!isPopupOpen) {
@@ -29,22 +40,44 @@ export const PriceFilterPopup = ({
             ref={popupRef}
             onClick={(e) => e.stopPropagation()}
         >
-            <div className={classes.sliderContainer}>
-                <Slider
-                    value={value}
-                    onChange={(event, newValue) =>
-                        handleSliderChange(event, newValue)
-                    }
-                    valueLabelDisplay="auto"
-                    min={1090000}
-                    max={2900980}
-                    className={classes.slider}
-                />
+            <div className={classes.header}>
+                <div className={classes.sliderContainer}>
+                    <Slider
+                        value={value}
+                        onChange={(event, newValue) =>
+                            handleSliderChange(event, newValue)
+                        }
+                        valueLabelDisplay="auto"
+                        min={min}
+                        max={max}
+                        className={classes.slider}
+                    />
+                </div>
+
+                {/* Добавляем переключатель валют */}
+                {currencyEnabled && (
+                    <div className={classes.currencyToggle}>
+                        {currencyOptions.map((cur) => (
+                            <button
+                                key={cur}
+                                className={`${classes.currencyButton} ${
+                                    currency === cur
+                                        ? classes.activeCurrency
+                                        : ""
+                                }`}
+                                onClick={() => handleCurrencyChange(cur)}
+                            >
+                                {cur}
+                            </button>
+                        ))}
+                    </div>
+                )}
             </div>
+
             <div className={classes.rangeWrapper}>
                 <div className={classes.rangeItem}>
                     <label htmlFor="minValue" className={classes.label}>
-                        від
+                        {labelFrom}
                     </label>
                     <input
                         id="minValue"
@@ -61,10 +94,11 @@ export const PriceFilterPopup = ({
                             setValue(newValue);
                         }}
                     />
+                    {/* <span className={classes.unit}>{currency}</span> */}
                 </div>
                 <div className={classes.rangeItem}>
                     <label htmlFor="maxValue" className={classes.label}>
-                        до
+                        {labelTo}
                     </label>
                     <input
                         id="maxValue"
@@ -81,11 +115,13 @@ export const PriceFilterPopup = ({
                             setValue(newValue);
                         }}
                     />
+                    {/* <span className={classes.unit}>{currency}</span> */}
                 </div>
             </div>
+
             {showActions && (
                 <FilterActions
-                    onReset={() => setValue([1000000, 3000000])}
+                    onReset={() => setValue([min, max])}
                     onApply={() => {
                         setIsPopupOpen(false);
                         if (closePopup) closePopup();

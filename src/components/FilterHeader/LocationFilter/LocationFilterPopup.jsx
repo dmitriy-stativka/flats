@@ -90,7 +90,7 @@ export const LocationFilterPopup = ({
                     </div>
                 </div>
 
-                <div className={classes.content}>
+                <div className={"lContent"}>
                     {activeTab === "city" && (
                         <>
                             {[
@@ -104,7 +104,7 @@ export const LocationFilterPopup = ({
                             ].map((city) => (
                                 <button
                                     key={city}
-                                    className={`${classes.button} ${
+                                    className={`lBtn ${
                                         activeButtons.includes(city)
                                             ? "active"
                                             : ""
@@ -134,7 +134,7 @@ export const LocationFilterPopup = ({
                             ].map((district) => (
                                 <button
                                     key={district}
-                                    className={`${classes.button} ${
+                                    className={`lBtn ${
                                         activeButtons.includes(district)
                                             ? "active"
                                             : ""
@@ -155,7 +155,7 @@ export const LocationFilterPopup = ({
                                 <div className={classes.checkboxDiv}>
                                     <input
                                         type="checkbox"
-                                        className={classes.checkbox}
+                                        className={"lCheckbox"}
                                         id="redLine"
                                         onClick={(e) => e.stopPropagation()}
                                     />
@@ -173,7 +173,7 @@ export const LocationFilterPopup = ({
                                     ].map((station) => (
                                         <li
                                             key={station}
-                                            className={`${classes.button} ${
+                                            className={`lBtn ${
                                                 activeStations[
                                                     "redLine"
                                                 ]?.includes(station)
@@ -197,7 +197,7 @@ export const LocationFilterPopup = ({
                                 <div className={classes.checkboxDiv}>
                                     <input
                                         type="checkbox"
-                                        className={classes.checkbox}
+                                        className={"lCheckbox"}
                                         id="greenLine"
                                         onClick={(e) => e.stopPropagation()}
                                     />
@@ -214,7 +214,7 @@ export const LocationFilterPopup = ({
                                     ].map((station) => (
                                         <li
                                             key={station}
-                                            className={`${classes.button} ${
+                                            className={`lBtn ${
                                                 activeStations[
                                                     "greenLine"
                                                 ]?.includes(station)
@@ -238,7 +238,7 @@ export const LocationFilterPopup = ({
                                 <div className={classes.checkboxDiv}>
                                     <input
                                         type="checkbox"
-                                        className={classes.checkbox}
+                                        className={"lCheckbox"}
                                         id="blueLine"
                                         onClick={(e) => e.stopPropagation()}
                                     />
@@ -252,7 +252,7 @@ export const LocationFilterPopup = ({
                                     ].map((station) => (
                                         <li
                                             key={station}
-                                            className={`${classes.button} ${
+                                            className={`lBtn ${
                                                 activeStations[
                                                     "blueLine"
                                                 ]?.includes(station)

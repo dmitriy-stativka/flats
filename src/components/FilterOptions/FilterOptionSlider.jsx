@@ -14,14 +14,14 @@ const FilterOptionSlider = ({
         <Swiper
             className={classes.filterOptions}
             modules={[Navigation]}
-            spaceBetween={10}
+            spaceBetween={8}
             slidesPerView="auto"
             navigation
         >
             {options.map((option, index) => (
                 <SwiperSlide key={index} className={classes.filterSlide}>
                     <button
-                        className={`${classes.filterOption} ${
+                        className={`lBtn ${
                             activeOptions.includes(index)
                                 ? classes.active || "active"
                                 : ""

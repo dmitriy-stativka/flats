@@ -9,6 +9,8 @@ import useGlobalStyles from "./components/App/GlobalStyles";
 import { ThemeProvider } from "@mui/material/styles";
 import GlobalVars from "./components/App/GlobalVars";
 
+import "./assets/styles/global.css";
+
 const App = () => {
     const classes = useBaseStyles();
     useGlobalStyles();

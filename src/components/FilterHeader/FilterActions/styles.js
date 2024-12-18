@@ -5,7 +5,6 @@ export const useStyles = makeStyles({
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-
         marginTop: "20px",
         paddingTop: "20px",
         borderTop: "1px solid #ddd",
@@ -34,7 +33,7 @@ export const useStyles = makeStyles({
         transition: "all 0.3s ease",
 
         "&:hover": {
-            backgroundColor: "#c70000",
+            backgroundColor: "#FF0711",
         },
     },
 });
