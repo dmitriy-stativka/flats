@@ -9,13 +9,14 @@ import PopupProvider from "../../context/PopUpProvider";
 const FilterHeader = () => {
     const classes = useStyles();
     const [isPopupOpen, setIsPopupOpen] = useState(null);
+    console.log('isPopupOpen', isPopupOpen);
 
     const closePopup = () => {
         setIsPopupOpen(false);
     };
 
     return (
-        <div className={`${classes.filterHeader} ${isPopupOpen ? "show" : ""}`}>
+        <div className={`${classes.filterHeader} ${![null, false].includes(isPopupOpen) ? "show" : ""}`}>
             <PopupProvider value={isPopupOpen}>
                 <LocationFilter
                     setIsPopupOpen={setIsPopupOpen}

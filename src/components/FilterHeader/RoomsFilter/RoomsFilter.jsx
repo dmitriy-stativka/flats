@@ -20,7 +20,7 @@ const RoomsFilter = ({ setIsPopupOpen, closePopup }) => {
     const togglePopup = () => {
         const newState = !isPopupOpen;
         setIsLocalPopupOpen(newState);
-        setIsPopupOpen('RoomsFilter');
+        setIsPopupOpen(newState ? 'RoomsFilter': null);
     };
 
     return (

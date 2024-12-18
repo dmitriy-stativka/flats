@@ -20,7 +20,7 @@ const TypeFilter = ({ setIsPopupOpen, closePopup }) => {
     const togglePopup = () => {
         const newState = !isPopupOpen;
         setIsLocalPopupOpen(newState);
-        setIsPopupOpen('TypeFilter');
+        setIsPopupOpen(newState ? 'TypeFilter' : null);
     };
 
     return (

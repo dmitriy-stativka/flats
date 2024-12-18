@@ -41,9 +41,12 @@ const FilterOptions = () => {
     const classes = useStyles();
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [activeOptions, setActiveOptions] = useState([]);
-    const [priceRange, setPriceRange] = useState([1090000, 2900980]);
+    const [priceRange, setPriceRange] = useState([100000, 888888]);
+    const [pricePerSqm, setPricePerSqm] = useState([100000, 888888]);
+    const [totalArea, setTotalArea] = useState([20.2, 8888.88]);
+    const [floor, setFloor] = useState([1, 88]);
     const [selectedRooms, setSelectedRooms] = useState([]);
-    const [activeTab, setActiveTab] = useState(0);
+    const [activeTab, setActiveTab] = useState("city");
     const [activeButtons, setActiveButtons] = useState([]);
     const [activeStations, setActiveStations] = useState({});
 
@@ -148,16 +151,17 @@ const FilterOptions = () => {
                     <div
                         ref={popupContentRef}
                         className={classes.popupContent}
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            setIsPopupOpen(false);
-                        }}
                     >
                         <h2 className={classes.popupContentTitle}>
                             Всі фільтри
                         </h2>
 
-                        <button className={classes.popupContentClose}></button>
+                        <button className={classes.popupContentClose}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setIsPopupOpen(false);
+                                }}>
+                        </button>
 
                         <div className={classes.popupContentInner}>
                             <CollapsibleFilter
@@ -233,14 +237,14 @@ const FilterOptions = () => {
                                 onCurrencyToggle={handleCurrencyToggle}
                             >
                                 <PriceFilterPopup
-                                    value={priceRange}
-                                    setValue={setPriceRange}
+                                    value={pricePerSqm}
+                                    setValue={setPricePerSqm}
                                     isPopupOpen={isPopupOpen}
                                     setIsPopupOpen={setIsPopupOpen}
                                     showActions={false}
                                     customClass={classes.customPopup}
-                                    min={20.2}
-                                    max={8888.88}
+                                    min={100000}
+                                    max={888888}
                                     labelFrom="від, грн"
                                     labelTo="до, грн"
                                 />
@@ -250,8 +254,8 @@ const FilterOptions = () => {
                                 classes={classes}
                             >
                                 <PriceFilterPopup
-                                    value={priceRange}
-                                    setValue={setPriceRange}
+                                    value={totalArea}
+                                    setValue={setTotalArea}
                                     isPopupOpen={isPopupOpen}
                                     setIsPopupOpen={setIsPopupOpen}
                                     showActions={false}
@@ -264,8 +268,8 @@ const FilterOptions = () => {
                             </CollapsibleFilter>
                             <CollapsibleFilter title="Поверх" classes={classes}>
                                 <PriceFilterPopup
-                                    value={priceRange}
-                                    setValue={setPriceRange}
+                                    value={floor}
+                                    setValue={setFloor}
                                     isPopupOpen={isPopupOpen}
                                     setIsPopupOpen={setIsPopupOpen}
                                     showActions={false}
