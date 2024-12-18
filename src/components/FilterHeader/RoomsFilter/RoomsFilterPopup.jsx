@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useCallback } from "react";
+import React, { useRef } from "react";
 import { useStyles } from "./styles";
 import FilterActions from "../FilterActions/FilterActions";
 
@@ -15,22 +15,6 @@ const RoomsFilterPopup = ({
     const classes = useStyles();
     const popupRef = useRef(null);
 
-    const handleClickOutside = useCallback(
-        (event) => {
-            if (popupRef.current && !popupRef.current.contains(event.target)) {
-                setIsPopupOpen(false);
-            }
-        },
-        [setIsPopupOpen]
-    );
-
-    useEffect(() => {
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, [handleClickOutside]);
-
     const toggleRoomSelection = (room) => {
         setSelectedRooms((prev) =>
             prev.includes(room)
@@ -44,7 +28,7 @@ const RoomsFilterPopup = ({
     };
 
     const handleApply = () => {
-        setIsPopupOpen(false);
+        setIsPopupOpen(null);
         if (closePopup) closePopup();
     };
 

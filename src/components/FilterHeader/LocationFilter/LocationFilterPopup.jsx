@@ -43,7 +43,7 @@ export const LocationFilterPopup = ({
     };
 
     const handleApply = () => {
-        setIsPopupOpen(false);
+        setIsPopupOpen(null);
         if (closePopup) closePopup();
     };
 

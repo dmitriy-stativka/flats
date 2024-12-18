@@ -1,17 +1,27 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useStyles } from "./styles";
 import PriceFilterPopup from "./PriceFilterPopup";
+import PopupStateContext from "../../../context/PopupState";
 
 const PriceFilter = ({ setIsPopupOpen, closePopup }) => {
     const classes = useStyles();
     const [currency, setCurrency] = useState("грн");
     const [value, setValue] = useState([1090000, 2900980]);
     const [isPopupOpen, setIsLocalPopupOpen] = useState(false);
+    const filterType = 'PriceFilter';
+
+    const openPopupType = useContext(PopupStateContext);
+
+    useEffect(() => {
+        if (openPopupType !== filterType && openPopupType !== null) {
+            setIsLocalPopupOpen(false);
+        }
+    }, [openPopupType, setIsLocalPopupOpen]);
 
     const togglePopup = () => {
         const newState = !isPopupOpen;
         setIsLocalPopupOpen(newState);
-        setIsPopupOpen(newState);
+        setIsPopupOpen('PriceFilter');
     };
 
     const handleCurrencyChange = (event, newCurrency) => {
@@ -20,12 +30,12 @@ const PriceFilter = ({ setIsPopupOpen, closePopup }) => {
     };
 
     return (
-        <div className={`${classes.filterItem} ${isPopupOpen ? "show" : " "}`}>
+        <div className={`${classes.filterItem} ${isPopupOpen ? "show" : " "}`}
+             onClick={(event) => { event.stopPropagation(); togglePopup(); }}>
             <div
                 className={classes.header}
-                onClick={(event) => event.stopPropagation()}
             >
-                <h3 className={classes.title} onClick={togglePopup}>
+                <h3 className={classes.title}>
                     Вартість
                 </h3>
                 <div className={classes.currencyToggle}>

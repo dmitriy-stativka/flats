@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useCallback } from "react";
+import React, { useRef } from "react";
 import { useStyles } from "./styles";
 import FilterActions from "../FilterActions/FilterActions";
 
@@ -14,22 +14,6 @@ const TypeFilterPopup = ({
     const classes = useStyles();
     const popupRef = useRef(null);
 
-    const handleClickOutside = useCallback(
-        (event) => {
-            if (popupRef.current && !popupRef.current.contains(event.target)) {
-                setIsPopupOpen(false);
-            }
-        },
-        [setIsPopupOpen]
-    );
-
-    useEffect(() => {
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, [handleClickOutside]);
-
     const toggleButton = (buttonLabel) => {
         setActiveButtons((prev) =>
             prev.includes(buttonLabel)
@@ -43,7 +27,7 @@ const TypeFilterPopup = ({
     };
 
     const handleApply = () => {
-        setIsPopupOpen(false);
+        setIsPopupOpen(null);
         if (closePopup) closePopup();
     };
 

@@ -123,7 +123,7 @@ export const PriceFilterPopup = ({
                 <FilterActions
                     onReset={() => setValue([min, max])}
                     onApply={() => {
-                        setIsPopupOpen(false);
+                        setIsPopupOpen(null);
                         if (closePopup) closePopup();
                     }}
                 />

@@ -1,16 +1,26 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useStyles } from "./styles";
 import TypeFilterPopup from "./TypeFilterPopup";
+import PopupStateContext from "../../../context/PopupState";
 
 const TypeFilter = ({ setIsPopupOpen, closePopup }) => {
     const classes = useStyles();
     const [isPopupOpen, setIsLocalPopupOpen] = useState(false);
     const [activeButtons, setActiveButtons] = useState([]);
+    const filterType = 'TypeFilter';
+
+    const openPopupType = useContext(PopupStateContext);
+
+    useEffect(() => {
+        if (openPopupType !== filterType && openPopupType !== null) {
+            setIsLocalPopupOpen(false);
+        }
+    }, [openPopupType, setIsLocalPopupOpen]);
 
     const togglePopup = () => {
         const newState = !isPopupOpen;
         setIsLocalPopupOpen(newState);
-        setIsPopupOpen(newState);
+        setIsPopupOpen('TypeFilter');
     };
 
     return (

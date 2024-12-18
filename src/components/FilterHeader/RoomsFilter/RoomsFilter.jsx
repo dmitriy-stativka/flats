@@ -1,16 +1,26 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useStyles } from "./styles";
 import RoomsFilterPopup from "./RoomsFilterPopup";
+import PopupStateContext from "../../../context/PopupState";
 
 const RoomsFilter = ({ setIsPopupOpen, closePopup }) => {
     const classes = useStyles();
     const [isPopupOpen, setIsLocalPopupOpen] = useState(false);
     const [selectedRooms, setSelectedRooms] = useState([]);
+    const filterType = 'RoomsFilter';
+
+    const openPopupType = useContext(PopupStateContext);
+
+    useEffect(() => {
+        if (openPopupType !== filterType && openPopupType !== null) {
+            setIsLocalPopupOpen(false);
+        }
+    }, [openPopupType, setIsLocalPopupOpen]);
 
     const togglePopup = () => {
         const newState = !isPopupOpen;
         setIsLocalPopupOpen(newState);
-        setIsPopupOpen(newState);
+        setIsPopupOpen('RoomsFilter');
     };
 
     return (

@@ -148,7 +148,10 @@ const FilterOptions = () => {
                     <div
                         ref={popupContentRef}
                         className={classes.popupContent}
-                        onClick={(e) => e.stopPropagation()}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setIsPopupOpen(false);
+                        }}
                     >
                         <h2 className={classes.popupContentTitle}>
                             Всі фільтри
@@ -381,7 +384,7 @@ const FilterOptions = () => {
                                 />
                             </CollapsibleFilter>
 
-                            <FilterActions applyTitle="Показати (23 проєкти)" />
+                            <FilterActions applyTitle="Показати (23 проєкти)" onApply={() => setIsPopupOpen(false)} />
                         </div>
                     </div>
                 </div>

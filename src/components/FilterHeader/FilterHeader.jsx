@@ -4,10 +4,11 @@ import LocationFilter from "./LocationFilter/LocationFilter";
 import PriceFilter from "./PriceFilter/PriceFilter";
 import TypeFilter from "./TypeFilter/TypeFilter";
 import RoomsFilter from "./RoomsFilter/RoomsFilter";
+import PopupProvider from "../../context/PopUpProvider";
 
 const FilterHeader = () => {
     const classes = useStyles();
-    const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const [isPopupOpen, setIsPopupOpen] = useState(null);
 
     const closePopup = () => {
         setIsPopupOpen(false);
@@ -15,7 +16,7 @@ const FilterHeader = () => {
 
     return (
         <div className={`${classes.filterHeader} ${isPopupOpen ? "show" : ""}`}>
-            <>
+            <PopupProvider value={isPopupOpen}>
                 <LocationFilter
                     setIsPopupOpen={setIsPopupOpen}
                     closePopup={closePopup}
@@ -32,7 +33,7 @@ const FilterHeader = () => {
                     setIsPopupOpen={setIsPopupOpen}
                     closePopup={closePopup}
                 />
-            </>
+            </PopupProvider>
         </div>
     );
 };
