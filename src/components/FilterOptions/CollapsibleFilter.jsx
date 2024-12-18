@@ -5,13 +5,17 @@ const CollapsibleFilter = ({
     children,
     classes,
     showSwitcher = false,
-    currency,
-    onCurrencyToggle,
 }) => {
     const [isOpen, setIsOpen] = useState(true);
+    const [currency, setCurrency] = useState("UAH"); // Локальное состояние валюты
 
     const toggleOpen = () => {
         setIsOpen(!isOpen);
+    };
+
+    const handleCurrencyClick = (event, newCurrency) => {
+        event.stopPropagation(); // Останавливаем всплытие события клика
+        setCurrency(newCurrency); // Обновляем локальное состояние
     };
 
     return (
@@ -27,13 +31,13 @@ const CollapsibleFilter = ({
                     {showSwitcher && (
                         <div className={classes.switcher}>
                             <button
-                                onClick={() => onCurrencyToggle("UAH")}
+                                onClick={(e) => handleCurrencyClick(e, "UAH")}
                                 className={currency === "UAH" ? "active" : ""}
                             >
                                 грн
                             </button>
                             <button
-                                onClick={() => onCurrencyToggle("USD")}
+                                onClick={(e) => handleCurrencyClick(e, "USD")}
                                 className={currency === "USD" ? "active" : ""}
                             >
                                 $

@@ -1,9 +1,6 @@
 import React from "react";
-import { useStyles } from "./styles";
 
 const ProjectNameFilterPopup = ({ activeProjects, setActiveProjects }) => {
-    const classes = useStyles();
-
     const projects = [
         "ЖК City Hub",
         "ЖК Озерний гай Гатне",
@@ -33,7 +30,7 @@ const ProjectNameFilterPopup = ({ activeProjects, setActiveProjects }) => {
                 <button
                     key={project}
                     className={`lBtn ${
-                        activeProjects.includes(project) ? classes.active : ""
+                        activeProjects.includes(project) ? "active" : ""
                     }`}
                     onClick={() => toggleProject(project)}
                 >

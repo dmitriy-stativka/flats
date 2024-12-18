@@ -1,9 +1,6 @@
 import React from "react";
-import { useStyles } from "./styles";
 
 const SectionFilterPopup = ({ activeSections, setActiveSections }) => {
-    const classes = useStyles();
-
     const sections = ["А", "Б", "В", "Г", "Д12", "С1"];
 
     const toggleSection = (section) => {
@@ -20,7 +17,7 @@ const SectionFilterPopup = ({ activeSections, setActiveSections }) => {
                 <button
                     key={section}
                     className={`lBtn ${
-                        activeSections.includes(section) ? classes.active : ""
+                        activeSections.includes(section) ? "active" : ""
                     }`}
                     onClick={() => toggleSection(section)}
                 >

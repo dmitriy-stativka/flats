@@ -73,7 +73,7 @@ const RoomsFilterPopup = ({
                                     type="button"
                                     className={`lBtn ${
                                         selectedRooms.includes(room)
-                                            ? classes.activeButton
+                                            ? "active"
                                             : ""
                                     }`}
                                     onClick={() => toggleRoomSelection(room)}

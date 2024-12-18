@@ -1,9 +1,6 @@
 import React from "react";
-import { useStyles } from "./styles";
 
 const FinishingStagePopup = ({ activeFinishes, setActiveFinishes }) => {
-    const classes = useStyles();
-
     const finishes = ["Без ремонту", "З ремонтом"];
 
     const toggleFinish = (finish) => {
@@ -20,7 +17,7 @@ const FinishingStagePopup = ({ activeFinishes, setActiveFinishes }) => {
                 <button
                     key={finish}
                     className={`lBtn ${
-                        activeFinishes.includes(finish) ? classes.active : ""
+                        activeFinishes.includes(finish) ? "active" : ""
                     }`}
                     onClick={() => toggleFinish(finish)}
                 >

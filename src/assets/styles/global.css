@@ -94,6 +94,17 @@ body * {
     border-width: 0 2px 2px 0;
 }
 
+@media (max-width: 1024px) {
+    .lCheckbox + label {
+        font-size: 14px;
+    }
+
+    .lCheckbox {
+        width: 22px;
+        height: 22px;
+    }
+}
+
 /* Checkbox setting end */
 
 /* Global setting start */

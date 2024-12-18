@@ -1,13 +1,10 @@
 import React from "react";
-import { useStyles } from "../styles";
 
 import { ReactComponent as CreditIcon } from "./icons/credit.svg";
 import { ReactComponent as InstallmentIcon } from "./icons/installment.svg";
 import { ReactComponent as PaymentIcon } from "./icons/payment.svg";
 
 const PurchaseTermsPopup = ({ activeTerms, setActiveTerms }) => {
-    const classes = useStyles();
-
     const terms = [
         { label: "Кредит", icon: <CreditIcon /> },
         { label: "Розстрочка", icon: <InstallmentIcon /> },
@@ -28,7 +25,7 @@ const PurchaseTermsPopup = ({ activeTerms, setActiveTerms }) => {
                 <button
                     key={label}
                     className={`lBtn ${
-                        activeTerms.includes(label) ? classes.active : ""
+                        activeTerms.includes(label) ? "active" : ""
                     }`}
                     onClick={() => toggleTerm(label)}
                 >

@@ -265,26 +265,28 @@ export const useStyles = makeStyles({
 
         [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
             fontSize: "18px",
+            gap: "12px",
         },
     },
 
     collapsible: {
-        paddingBottom: "32px",
         marginBottom: "32px",
         borderBottom: "1px solid #1E1E1E1A",
 
         [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
-            paddingBottom: "20px",
-            marginTop: "20px",
-            marginBottom: "0px",
+            marginBottom: "20px",
         },
     },
 
     collapsibleContent: {
-        marginTop: "20px",
+        marginBottom: "32px",
         height: "100%",
         maxHeight: "1000px",
         transition: "max-height 0.5s, margin 0.5s",
+
+        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+            marginBottom: "20px",
+        },
 
         "&.hide": {
             maxHeight: "0",
@@ -300,6 +302,12 @@ export const useStyles = makeStyles({
         alignItems: "center",
         position: "relative",
         cursor: "pointer",
+        paddingBottom: "20px",
+        transition: "padding 0.5s",
+
+        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+            paddingBottom: "16px",
+        },
 
         "&:after": {
             content: '""',
@@ -314,9 +322,18 @@ export const useStyles = makeStyles({
             transition: "transform 0.5s",
         },
 
-        "&.hide:after": {
-            transform: "rotate(180deg)",
-            transition: "transform 0.5s",
+        "&.hide": {
+            paddingBottom: "32px",
+            transition: "padding 0.5s",
+
+            [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+                paddingBottom: "20px",
+            },
+
+            "&:after": {
+                transform: "rotate(180deg)",
+                transition: "transform 0.5s",
+            },
         },
     },
 
@@ -361,6 +378,10 @@ export const useStyles = makeStyles({
         top: "30px",
         backgroundImage:
             "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none'%3E%3Cpath fill='%23fff' d='M0 0h32v32H0z'/%3E%3Cpath stroke='%231E1E1E' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 24 24 8M24 24 8 8'/%3E%3C/svg%3E\")",
+
+        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+            right: "20px",
+        },
     },
 
     customPopup: {
