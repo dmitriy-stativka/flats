@@ -21,7 +21,7 @@ const PriceFilter = ({ setIsPopupOpen, closePopup }) => {
     const togglePopup = () => {
         const newState = !isPopupOpen;
         setIsLocalPopupOpen(newState);
-        setIsPopupOpen('PriceFilter');
+        setIsPopupOpen(newState ? 'PriceFilter': null);
     };
 
     const handleCurrencyChange = (event, newCurrency) => {

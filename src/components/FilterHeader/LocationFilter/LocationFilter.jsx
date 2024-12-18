@@ -22,7 +22,7 @@ const LocationFilter = ({ setIsPopupOpen, closePopup }) => {
     const togglePopup = () => {
         const newState = !isPopupOpen;
         setIsLocalPopupOpen(newState);
-        setIsPopupOpen('LocationFilter');
+        setIsPopupOpen(newState ? 'LocationFilter' : null);
     };
 
     return (
@@ -38,7 +38,7 @@ const LocationFilter = ({ setIsPopupOpen, closePopup }) => {
 
             <LocationFilterPopup
                 isPopupOpen={ isPopupOpen }
-                setIsPopupOpen={ setIsLocalPopupOpen }
+                setIsPopupOpen={ setIsPopupOpen }
                 closePopup={ closePopup }
                 activeTab={ activeTab }
                 setActiveTab={ setActiveTab }

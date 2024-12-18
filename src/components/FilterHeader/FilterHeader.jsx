@@ -15,7 +15,7 @@ const FilterHeader = () => {
     };
 
     return (
-        <div className={`${classes.filterHeader} ${isPopupOpen ? "show" : ""}`}>
+        <div className={`${classes.filterHeader} ${![null, false].includes(isPopupOpen) ? "show" : ""}`}>
             <PopupProvider value={isPopupOpen}>
                 <LocationFilter
                     setIsPopupOpen={setIsPopupOpen}
