@@ -1,9 +1,6 @@
 import React from "react";
-import { useStyles } from "../styles";
 
 const CompletionDatePopup = ({ activeDates, setActiveDates }) => {
-    const classes = useStyles();
-
     const dates = [
         "I квартал 2025",
         "II квартал 2025",
@@ -28,7 +25,7 @@ const CompletionDatePopup = ({ activeDates, setActiveDates }) => {
                 <button
                     key={date}
                     className={`lBtn ${
-                        activeDates.includes(date) ? classes.active : ""
+                        activeDates.includes(date) ? "active" : ""
                     }`}
                     onClick={() => toggleDate(date)}
                 >

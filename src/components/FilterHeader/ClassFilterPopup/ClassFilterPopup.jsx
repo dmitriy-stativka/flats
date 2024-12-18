@@ -1,5 +1,4 @@
 import React from "react";
-import { useStyles } from "../styles";
 
 import { ReactComponent as BusinessIcon } from "./icons/business.svg";
 import { ReactComponent as ComfortIcon } from "./icons/comfort.svg";
@@ -8,8 +7,6 @@ import { ReactComponent as ClubHouseIcon } from "./icons/clubhouse.svg";
 import { ReactComponent as PremiumIcon } from "./icons/premium.svg";
 
 const ClassFilterPopup = ({ activeClasses, setActiveClasses }) => {
-    const classes = useStyles();
-
     const options = [
         { label: "Бізнес-клас", icon: <BusinessIcon /> },
         { label: "Комфорт", icon: <ComfortIcon /> },
@@ -32,7 +29,7 @@ const ClassFilterPopup = ({ activeClasses, setActiveClasses }) => {
                 <button
                     key={label}
                     className={`lBtn ${
-                        activeClasses.includes(label) ? classes.active : ""
+                        activeClasses.includes(label) ? "active" : ""
                     }`}
                     onClick={() => toggleOption(label)}
                 >

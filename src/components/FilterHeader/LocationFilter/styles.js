@@ -39,10 +39,6 @@ export const useStyles = makeStyles({
         marginBottom: "20px",
         borderRadius: "50px",
         padding: "4px",
-
-        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
-            marginBottom: "0px",
-        },
     },
     tab: {
         flex: 1,
@@ -51,7 +47,7 @@ export const useStyles = makeStyles({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "50px",
+        height: "52px",
         fontSize: "16px",
         fontWeight: "500",
         color: "#1E1E1E",
@@ -144,6 +140,10 @@ export const useStyles = makeStyles({
         display: "flex",
         alignItems: "center",
         gap: "8px",
+
+        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+            gap: "15px",
+        },
     },
 });
 

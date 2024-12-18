@@ -1,9 +1,6 @@
 import React from "react";
-import { useStyles } from "../styles";
 
 const ConstructionStagePopup = ({ activeStages, setActiveStages }) => {
-    const classes = useStyles();
-
     const stages = [
         "В проєкті",
         "Будується",
@@ -26,7 +23,7 @@ const ConstructionStagePopup = ({ activeStages, setActiveStages }) => {
                 <button
                     key={stage}
                     className={`lBtn ${
-                        activeStages.includes(stage) ? classes.active : ""
+                        activeStages.includes(stage) ? "active" : ""
                     }`}
                     onClick={() => toggleStage(stage)}
                 >

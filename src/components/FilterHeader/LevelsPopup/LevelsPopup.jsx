@@ -1,9 +1,6 @@
 import React from "react";
-import { useStyles } from "../styles";
 
 const LevelsPopup = ({ activeLevels, setActiveLevels }) => {
-    const classes = useStyles();
-
     const levels = ["Однорівневі", "Дворівневі"];
 
     const toggleLevel = (level) => {
@@ -20,7 +17,7 @@ const LevelsPopup = ({ activeLevels, setActiveLevels }) => {
                 <button
                     key={level}
                     className={`lBtn ${
-                        activeLevels.includes(level) ? classes.active : ""
+                        activeLevels.includes(level) ? "active" : ""
                     }`}
                     onClick={() => toggleLevel(level)}
                 >

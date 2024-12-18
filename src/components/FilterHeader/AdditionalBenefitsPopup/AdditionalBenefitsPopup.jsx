@@ -1,5 +1,4 @@
 import React from "react";
-import { useStyles } from "../styles";
 
 import { ReactComponent as RepairIcon } from "../../FilterOptions/icons/repair.svg";
 import { ReactComponent as PromotionIcon } from "../../FilterOptions/icons/promotion.svg";
@@ -10,8 +9,6 @@ import { ReactComponent as ComfortIcon } from "../../FilterOptions/icons/comfort
 import { ReactComponent as SaleIcon } from "../../FilterOptions/icons/sale.svg";
 
 const AdditionalBenefitsPopup = ({ activeBenefits, setActiveBenefits }) => {
-    const classes = useStyles();
-
     const benefits = [
         { label: "З ремонтом", icon: <RepairIcon /> },
         { label: "Акція", icon: <PromotionIcon /> },
@@ -37,7 +34,7 @@ const AdditionalBenefitsPopup = ({ activeBenefits, setActiveBenefits }) => {
                 <button
                     key={label}
                     className={`lBtn ${
-                        activeBenefits.includes(label) ? classes.active : ""
+                        activeBenefits.includes(label) ? "active" : ""
                     }`}
                     onClick={() => toggleBenefit(label)}
                 >

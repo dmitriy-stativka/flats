@@ -1,9 +1,6 @@
 import React from "react";
-import { useStyles } from "../styles";
 
 const SalesStatusPopup = ({ activeStatus, setActiveStatus }) => {
-    const classes = useStyles();
-
     const statuses = [
         "Скоро у продажу",
         "Передпродаж",
@@ -29,7 +26,7 @@ const SalesStatusPopup = ({ activeStatus, setActiveStatus }) => {
                 <button
                     key={status}
                     className={`lBtn ${
-                        activeStatus.includes(status) ? classes.active : ""
+                        activeStatus.includes(status) ? "active" : ""
                     }`}
                     onClick={() => toggleStatus(status)}
                 >
