@@ -75,7 +75,7 @@ export const useStyles = makeStyles({
         color: "#666",
         display: "flex",
         alignItems: "center",
-        gap: "6px",
+        gap: "8px",
     },
     metroIcon: {
         fontSize: "14px",

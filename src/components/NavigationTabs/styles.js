@@ -18,11 +18,12 @@ export const useStyles = makeStyles({
         borderRadius: "100px",
         padding: "4px",
         maxWidth: "392px",
-        height: "56px",
+        height: "64px",
         width: "100%",
+        color: GlobalVars.colors.primaryColor1,
 
         [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
-            height: "44px",
+            height: "52px",
         },
     },
     tab: {
@@ -33,6 +34,7 @@ export const useStyles = makeStyles({
         cursor: "pointer",
         transition: "border 0.5s ease, background 0.5s ease",
         fontWeight: "500",
+        color: GlobalVars.colors.primaryColor1,
 
         [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
             fontSize: "16px",

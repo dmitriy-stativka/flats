@@ -4,7 +4,7 @@ const GlobalVars = {
         sm: "768px",
         md: "1024px",
         lg: "1200px",
-        xl: "1312px",
+        xl: "1376px",
     },
     colors: {
         primaryColor1: "#1e1e1e",

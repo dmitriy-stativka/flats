@@ -1,0 +1,106 @@
+body * {
+    box-sizing: border-box;
+}
+/* Button setting start */
+.lBtn {
+    gap: 8px;
+    color: #1e1e1eb2;
+    border: 1px solid #1e1e1e1a;
+    cursor: pointer;
+    display: flex;
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: 400;
+    background: #fff;
+    transition: all 0.3s ease;
+    align-items: center;
+    white-space: nowrap;
+    border-radius: 50px;
+    max-height: 52px;
+    min-height: 52px;
+    height: 52px;
+    box-sizing: border-box;
+}
+
+.lBtn:hover {
+    color: #1e1e1eb2;
+    background: #fff;
+    border: 1px solid #1e1e1eb2;
+}
+
+.lBtn.active {
+    color: #1e1e1e;
+    background: #fff;
+    border: 1px solid #1e1e1e;
+}
+
+.lBtn.active:hover {
+    background: #1e1e1e0d;
+}
+
+.lBtn svg {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lBtn.active svg {
+    color: #000;
+    transition: color 0.3s;
+}
+
+@media (max-width: 1024px) {
+    .lBtn {
+        font-size: 14px;
+        min-height: 44px;
+        height: 44px;
+        padding: 0 15px;
+    }
+}
+
+/* Button setting end */
+
+/* Checkbox setting start */
+
+.lCheckbox {
+    width: 20px;
+    border: 2px solid #1e1e1e4d;
+    cursor: pointer;
+    height: 20px;
+    margin: 0;
+    position: relative;
+    background: #fff;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+    -webkit-appearance: none;
+}
+
+.lCheckbox:checked {
+    border-color: #ed1c24;
+    background-color: #ed1c24;
+}
+
+.lCheckbox:checked::after {
+    inset: -5px 0 0 0;
+    width: 5px;
+    border: solid white;
+    height: 10px;
+    margin: auto;
+    content: "";
+    position: absolute;
+    transform: rotate(45deg);
+    border-width: 0 2px 2px 0;
+}
+
+/* Checkbox setting end */
+
+/* Global setting start */
+.lContent {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+/* Global setting end */

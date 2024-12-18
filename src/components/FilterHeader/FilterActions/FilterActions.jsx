@@ -1,7 +1,12 @@
 import React from "react";
 import { useStyles } from "./styles";
 
-const FilterActions = ({ onReset, onApply, showActions = true }) => {
+const FilterActions = ({
+    onReset,
+    onApply,
+    applyTitle = "Застосувати",
+    showActions = true,
+}) => {
     const classes = useStyles();
 
     if (!showActions) return null;
@@ -24,7 +29,7 @@ const FilterActions = ({ onReset, onApply, showActions = true }) => {
                     onApply();
                 }}
             >
-                Застосувати
+                {applyTitle}
             </button>
         </div>
     );

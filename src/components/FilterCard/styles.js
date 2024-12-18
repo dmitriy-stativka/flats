@@ -108,7 +108,8 @@ export const useStyles = makeStyles({
         top: "12px",
         left: "12px",
         display: "flex",
-        gap: "6px",
+        gap: "8px",
+        flexWrap: "wrap",
     },
 
     locationList: {
@@ -124,7 +125,7 @@ export const useStyles = makeStyles({
 
     locationListItem: {
         display: "flex",
-        gap: "4px",
+        gap: "8px",
         alignItems: "center",
 
         "& > img": {
@@ -148,14 +149,16 @@ export const useStyles = makeStyles({
         background: "#fff",
         borderRadius: "50px",
         fontSize: "14px",
-        padding: "7.5px 17px",
+        fontWeight: "400",
+        padding: "0px 12px",
         display: "flex",
         alignItems: "center",
         gap: "4px",
+        height: "32px",
 
         [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
             fontSize: "12px",
-            padding: "6px 8px",
+            height: "28px",
         },
 
         "& svg": {
@@ -244,6 +247,7 @@ export const useStyles = makeStyles({
 
     desktopView: {
         display: "block",
+        height: "100%",
 
         [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
             display: "none",

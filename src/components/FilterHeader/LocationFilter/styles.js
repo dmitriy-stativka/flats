@@ -8,13 +8,13 @@ export const useStyles = makeStyles({
     title: {
         margin: "0 0 8px 0",
         fontSize: "16px",
-        color: "#000",
+        color: "#1E1E1E",
         fontWeight: "500",
     },
     subtitle: {
         margin: 0,
         fontSize: "16px",
-        color: "#757575",
+        color: "#1E1E1EB2",
     },
     popupTrigger: {
         fontSize: "16px",
@@ -47,8 +47,11 @@ export const useStyles = makeStyles({
     tab: {
         flex: 1,
         textAlign: "center",
-        padding: "16px 0",
         cursor: "pointer",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "50px",
         fontSize: "16px",
         fontWeight: "500",
         color: "#1E1E1E",
@@ -59,6 +62,7 @@ export const useStyles = makeStyles({
         [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
             fontSize: "14px",
             padding: "12px 0",
+            height: "44px",
         },
 
         "&:hover": {
@@ -81,37 +85,6 @@ export const useStyles = makeStyles({
         display: "flex",
         flexWrap: "wrap",
         gap: "8px",
-    },
-    button: {
-        padding: "15.3px 19px",
-        borderRadius: "50px",
-        border: "1px solid #1E1E1E1A",
-        color: "#1E1E1EB2",
-        background: "#fff",
-        cursor: "pointer",
-        fontSize: "16px",
-        transition: "all 0.3s",
-
-        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
-            fontSize: "14px",
-            padding: "12.5px 15px",
-        },
-
-        "&:hover": {
-            background: "#fff",
-            border: "1px solid #1E1E1E73",
-            color: "#1E1E1EB2",
-        },
-
-        "&.active": {
-            background: "#fff",
-            border: "1px solid #1E1E1E",
-            color: "#1E1E1E",
-
-            "&:hover": {
-                background: "#1E1E1E0D",
-            },
-        },
     },
 
     checkboxGroup: {

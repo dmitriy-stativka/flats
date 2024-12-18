@@ -35,6 +35,7 @@ export const useStyles = makeStyles({
         borderRadius: "50px",
         cursor: "pointer",
         fontWeight: "500",
+        color: "#1E1E1E",
     },
     activeCurrency: {
         background: "#fff",
@@ -167,7 +168,7 @@ export const useStyles = makeStyles({
         background: "white",
         boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
         border: "1px solid #ddd",
-        borderRadius: "5px",
+        borderRadius: "6px",
         padding: "30px",
         zIndex: 10,
     },

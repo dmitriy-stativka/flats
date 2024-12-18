@@ -7,16 +7,44 @@ export const useStyles = makeStyles({
         display: "flex",
         alignItems: "center",
         justifyContent: "flex-end",
-        gap: "15px",
+        gap: "20px",
 
         [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
-            gap: "20px",
+            justifyContent: "flex-start",
         },
+
         "& .swiper": {
             margin: "0 auto 0 0",
 
             [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
                 display: "none",
+            },
+        },
+
+        "& .allFiltersTabsTop": {
+            display: "none",
+        },
+
+        "&.tabsShow": {
+            flexWrap: "wrap",
+
+            [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+                gap: "20px",
+            },
+
+            "& .headerNavTop": {
+                display: "block",
+            },
+
+            "& .allFiltersTabsTop": {
+                [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+                    display: "block",
+                    width: "calc(100% - 80px)",
+
+                    "& .headerNav": {
+                        display: "block",
+                    },
+                },
             },
         },
     },
@@ -86,84 +114,6 @@ export const useStyles = makeStyles({
         },
     },
 
-    allFiltersTabs: {
-        display: "none",
-
-        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
-            display: "block",
-            width: "calc(100% - 80px)",
-
-            "& .headerNav": {
-                display: "block",
-            },
-        },
-    },
-
-    filterOption: {
-        padding: "14px 20px",
-        border: "1px solid #1E1E1E1A",
-        borderRadius: "50px",
-        background: "#fff",
-        fontSize: "16px",
-        cursor: "pointer",
-        transition: "all 0.3s ease",
-        whiteSpace: "nowrap",
-        color: "#1E1E1EB2",
-        display: "flex",
-        alignItems: "center",
-        gap: "6px",
-
-        "& svg": {
-            "& path": {
-                transition: "stroke-opacity 0.3s",
-            },
-        },
-
-        "&:hover": {
-            border: "1px solid #1E1E1EB2",
-            color: "#1E1E1EB2",
-
-            "& svg": {
-                "& path": {
-                    strokeOpacity: "1",
-                    transition: "stroke-opacity 0.3s",
-                },
-            },
-        },
-
-        "&.active": {
-            border: "1px solid #1E1E1E",
-            color: "#1E1E1E",
-
-            "& svg": {
-                color: "#000",
-                transition: "color 0.3s",
-
-                "& path": {
-                    strokeOpacity: "1",
-                },
-            },
-
-            "&:hover": {
-                background: "#1E1E1E0D",
-            },
-        },
-    },
-
-    icon: {
-        width: "20px",
-        height: "20px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-
-        "& svg": {
-            width: "100%",
-            height: "100%",
-            color: "#787878",
-        },
-    },
-
     allFilters: {
         fontSize: "12px",
         color: "#fff",
@@ -182,14 +132,17 @@ export const useStyles = makeStyles({
 
     allFiltersButton: {
         padding: "12px 22px",
+        height: "52px",
         border: "1px solid #1E1E1E",
         borderRadius: "50px",
+        color: "#1E1E1E",
         background: "#fff",
+        fontWeight: "500",
         fontSize: "16px",
         display: "flex",
         alignItems: "center",
         whiteSpace: "nowrap",
-        gap: "6px",
+        gap: "8px",
         cursor: "pointer",
         transition: "all 0.3s ease",
         position: "relative",
@@ -240,26 +193,30 @@ export const useStyles = makeStyles({
 
         [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
             display: "block",
-            width: "100%",
+            width: "calc(100% - 80px)",
             fontSize: "20px",
             fontWeight: "500",
         },
     },
 
     popupContentInner: {
-        overflowY: "auto",
-        height: "100%",
-        paddingRight: "30px",
+        height: "calc(100% - 140px)",
+        overflow: "auto",
         marginRight: "5px",
+        paddingRight: "30px",
 
         [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
-            overflowY: "initial",
             paddingRight: "0",
             marginRight: "0",
+            height: "calc(100% - 60px)",
         },
 
         "&::-webkit-scrollbar": {
             width: "14px",
+
+            [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+                display: "none",
+            },
         },
         "&::-webkit-scrollbar-track": {
             background: "#fff",
@@ -273,19 +230,23 @@ export const useStyles = makeStyles({
             backgroundClip: "padding-box",
             borderRadius: "50px",
         },
+
+        "& > *": {
+            "&:last-child": {
+                padding: "0 0 40px 0",
+                border: "none",
+            },
+        },
     },
     popupOverlay: {
         position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100vw",
-        height: "100vh",
+        inset: "0",
+        padding: "40px 0 0 0",
         background: "rgba(0, 0, 0, 0.5)",
         display: "flex",
         alignItems: "flex-start",
         justifyContent: "center",
         zIndex: 1000,
-        paddingTop: "40px",
 
         [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
             paddingTop: "20px",
@@ -297,6 +258,10 @@ export const useStyles = makeStyles({
         color: "#1E1E1E",
         fontWeight: "500",
         margin: "0",
+
+        display: "flex",
+        alignItems: "center",
+        gap: "24px",
 
         [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
             fontSize: "18px",
@@ -317,6 +282,16 @@ export const useStyles = makeStyles({
 
     collapsibleContent: {
         marginTop: "20px",
+        height: "100%",
+        maxHeight: "1000px",
+        transition: "max-height 0.5s, margin 0.5s",
+
+        "&.hide": {
+            maxHeight: "0",
+            margin: "0",
+            overflow: "hidden",
+            transition: "max-height 0.5s, margin 0.5s",
+        },
     },
 
     collapsibleHeader: {
@@ -324,6 +299,7 @@ export const useStyles = makeStyles({
         justifyContent: "space-between",
         alignItems: "center",
         position: "relative",
+        cursor: "pointer",
 
         "&:after": {
             content: '""',
@@ -335,6 +311,12 @@ export const useStyles = makeStyles({
             backgroundSize: "50%",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center center",
+            transition: "transform 0.5s",
+        },
+
+        "&.hide:after": {
+            transform: "rotate(180deg)",
+            transition: "transform 0.5s",
         },
     },
 
@@ -342,7 +324,7 @@ export const useStyles = makeStyles({
         fontSize: "22px",
         lineHeight: "32px",
         fontWeight: "500",
-        margin: "0 40px 32px 0",
+        margin: "30px 40px 32px 0",
         paddingBottom: "32px",
         borderBottom: "1px solid #1E1E1E1A",
 
@@ -355,18 +337,30 @@ export const useStyles = makeStyles({
 
     popupContent: {
         background: "#fff",
-        padding: "30px 0px 30px 40px",
+        padding: "0px 0 0 40px",
         width: "100%",
         height: "100%",
         maxWidth: "816px",
         position: "relative",
         textAlign: "center",
         boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+        borderRadius: "6px ",
 
         [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
             padding: "20px",
             overflowY: "auto",
         },
+    },
+
+    popupContentClose: {
+        width: "32px",
+        height: "32px",
+        cursor: "pointer",
+        position: "absolute",
+        right: "40px",
+        top: "30px",
+        backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none'%3E%3Cpath fill='%23fff' d='M0 0h32v32H0z'/%3E%3Cpath stroke='%231E1E1E' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 24 24 8M24 24 8 8'/%3E%3C/svg%3E\")",
     },
 
     customPopup: {
@@ -388,6 +382,45 @@ export const useStyles = makeStyles({
         fontSize: "14px",
         "&:hover": {
             backgroundColor: "#d32f2f",
+        },
+    },
+
+    switcher: {
+        width: "88px",
+        height: "48px",
+        borderRadius: "50px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        background: "#1E1E1E1A",
+        padding: "4px",
+        boxSizing: "border-box",
+
+        [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+            width: "100px",
+            height: "36px",
+        },
+
+        "& button": {
+            width: "40px",
+            height: "40px",
+            borderRadius: "50px",
+            fontSize: "14px",
+            fontWeight: "400",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+
+            [`@media (max-width: ${GlobalVars.breakpoints.md})`]: {
+                width: "48px",
+                height: "32px",
+            },
+
+            "&.active": {
+                background: "#fff",
+                boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.15)",
+            },
         },
     },
 });

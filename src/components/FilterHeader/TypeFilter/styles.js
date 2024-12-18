@@ -7,13 +7,13 @@ export const useStyles = makeStyles({
     title: {
         margin: "0 0 8px 0",
         fontSize: "16px",
-        color: "#000",
+        color: "#1E1E1E",
         fontWeight: "500",
     },
     subtitle: {
         margin: 0,
         fontSize: "16px",
-        color: "#757575",
+        color: "#1E1E1EB2",
     },
     popupTrigger: {
         fontSize: "16px",
@@ -28,7 +28,7 @@ export const useStyles = makeStyles({
         background: "white",
         boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
         border: "1px solid #ddd",
-        borderRadius: "5px",
+        borderRadius: "6px",
         padding: "30px",
         zIndex: 10,
     },
@@ -38,7 +38,7 @@ export const useStyles = makeStyles({
         gap: "10px",
     },
     button: {
-        padding: "15.3px 19px",
+        padding: "15px 19px",
         borderRadius: "50px",
         border: "1px solid #1E1E1E1A",
         color: "#1E1E1EB2",
@@ -46,6 +46,7 @@ export const useStyles = makeStyles({
         cursor: "pointer",
         fontSize: "16px",
         transition: "all 0.3s",
+        height: "52px",
 
         "&:hover": {
             background: "#fff",
